@@ -18,7 +18,7 @@ export default function HamList() {
 
     // Nav link list
     const list = [
-        'Login',
+        'Something',
         'SignUp',
         'Products',
         'Shop List',
@@ -45,6 +45,7 @@ export default function HamList() {
         }
     }, [isOpen]);
 
+    // Closing toggle when screen size is larger than 768
     useEffect(() => {
         if (width >= 768 && isOpen) {
             setIsOpen(false); // Only if setIsOpen is available
@@ -53,7 +54,7 @@ export default function HamList() {
 
     return (
         <>
-            <nav ref={navRef} className={`text-center transition-[max-height,opacity] duration-500 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} flex flex-col`} style={{ maxHeight: maxHeight }}>
+            <nav ref={navRef} className={`md:hidden text-center transition-[max-height,opacity] duration-500 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} flex flex-col`} style={{ maxHeight: maxHeight }}>
                 {list.map((list, id) => <Link href='#' key={id}>{list}</Link>)}
             </nav>
         </>
