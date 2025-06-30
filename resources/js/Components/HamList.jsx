@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useAppContext } from "./AppProvider";
 import { Link } from "@inertiajs/react";
+import MenuLinkList from "./MenuLinkList";
 
 export default function HamList() {
 
@@ -14,20 +15,14 @@ export default function HamList() {
     const navRef = useRef(null);
 
     // Getting current width of page
-    const [width, setWidth] = useState(window.innerWidth);
+    // This can cause problem if inertia try to run in server like Next.js SSR
+    const [width, setWidth] = useState(0);
 
-    // Nav link list
-    const list = [
-        'Something',
-        'SignUp',
-        'Products',
-        'Shop List',
-        'About',
-        'Contact',
-    ];
-
-    // For getting current widht of the page when there is a resizing
+    // For getting current width of the page when there is a resizing
     useEffect(() => {
+
+        //Getting the width only in the client side
+        setWidth(window.innerWidth);
 
         const handleResize = () => setWidth(window.innerWidth);
 
@@ -54,8 +49,8 @@ export default function HamList() {
 
     return (
         <>
-            <nav ref={navRef} className={`md:hidden text-center transition-[max-height,opacity] duration-500 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} flex flex-col`} style={{ maxHeight: maxHeight }}>
-                {list.map((list, id) => <Link href='#' key={id}>{list}</Link>)}
+            <nav ref={navRef} className={`md:hidden text-center rounded-lg text-white mt-1 p-1  bg-slate-800 transition-[max-height,opacity] duration-500 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} flex flex-col`} style={{  maxHeight: isOpen ? '500px' : '0px' }}>
+                {MenuLinkList.map((list, id) => <Link href='#' key={id} className="py-1">{list.name}</Link>)}
             </nav>
         </>
     )

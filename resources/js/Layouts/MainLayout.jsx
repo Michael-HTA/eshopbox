@@ -5,6 +5,7 @@ import Logo from "../Components/Logo/Logo";
 import HamList from "@/Components/HamList";
 import Hamburger from "@/Components/Hamburger";
 import { Head } from "@inertiajs/react";
+import NavLink from "@/Components/NavLink";
 
 export default function MainLayout() {
     return (
@@ -23,6 +24,7 @@ export default function MainLayout() {
             <div className="mx-4">
                 <hr className="h-[2px] bg-black" />
                 <HamList></HamList>
+                <NavLink></NavLink>
             </div>
         </AppProvider>
     )
