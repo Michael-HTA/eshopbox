@@ -63,7 +63,7 @@ export default function ShopCarousel() {
                 className="flex overflow-x-auto gap-4 scrollbar-hide px-10 scroll-smooth"
             >
                 {Array.from({ length: 10 }).map((_, index) => (
-                    <ShopCard className="w-28 md:w-56" key={index}></ShopCard>
+                    <ShopCard className="w-28 md:w-48" key={index}></ShopCard>
                 ))}
             </div>
 
