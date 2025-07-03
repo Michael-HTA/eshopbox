@@ -6,7 +6,6 @@ import Heading from "@/Components/Heading";
 import Copyright from "@/Components/CopyRight";
 import TextBox from "@/Components/TextBox";
 import SeeAll from "@/Components/SeeAll";
-import Card from "@/Components/Card";
 import TextBoxTwo from "@/Components/TextBoxTwo";
 import ShopList from "@/Components/ShopList";
 import ShopCarousel from "@/Components/ShopCarousel";
@@ -30,10 +29,10 @@ export default function Test() {
                     </div>
                 </div>
             </MainImage>
-            <Heading className="text-center py-10">{headingOne}</Heading>
+            <Heading className="text-center py-5">{headingOne}</Heading>
             <TextBox>{textOne}</TextBox>
             <div className="flex justify-between">
-                <Heading className="py-10">{headingTwo}</Heading>
+                <Heading className="py-5">{headingTwo}</Heading>
                 <SeeAll href="/login"></SeeAll>
             </div>
             <ShopCarousel></ShopCarousel>
@@ -41,19 +40,12 @@ export default function Test() {
                 <Heading className="py-5">{headingThree}</Heading>
                 <SeeAll href="/login"></SeeAll>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
-                <ShopList className=""></ShopList>
+            <div className="grid grid-cols-2  md:grid-cols-5 gap-3">
+                {Array.from({ length: 10 }).map((_, index) => (
+                    <ShopList className="transition-all ease-in-out duration-300 md:hover:scale-110" key={index} />
+                ))}
             </div>
-            <Heading className="py-10">{headingFour}</Heading>
+            <Heading className="py-5">{headingFour}</Heading>
             <TextBoxTwo></TextBoxTwo>
             <Copyright></Copyright>
         </div>
