@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
-import ShopList from "./ShopList";
+import ShopList from "./ShopCard";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import ShopCard from "./ShopCard";
 
 export default function ShopCarousel() {
     const scrollRef = useRef(null);
@@ -62,7 +63,7 @@ export default function ShopCarousel() {
                 className="flex overflow-x-auto gap-4 scrollbar-hide px-10 scroll-smooth"
             >
                 {Array.from({ length: 10 }).map((_, index) => (
-                    <ShopList className="w-24 md:w-56" key={index} />
+                    <ShopCard className="w-24 md:w-56" key={index}></ShopCard>
                 ))}
             </div>
 
