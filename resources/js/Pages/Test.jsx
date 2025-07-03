@@ -1,14 +1,63 @@
 import Serach from "@/Components/Buttons/Search";
+import CategoryDropDown from "@/Components/Buttons/CategoryDropDown";
 import MainImage from "@/Components/MainImage";
 import MainLayout from "@/Layouts/MainLayout";
+import Heading from "@/Components/Heading";
+import Copyright from "@/Components/CopyRight";
+import TextBox from "@/Components/TextBox";
+import SeeAll from "@/Components/SeeAll";
+import Card from "@/Components/Card";
+import TextBoxTwo from "@/Components/TextBoxTwo";
+
+const headingOne = "Buy & Sell With Us!";
+const textOne = "Our mission is to streamline the online shopping experience by bridging the gap between social media and modern e-commerce. We enable online shop owners to create storefronts that retain the familiar structure of social platforms, while offering the clarity and organization of a dedicated shopping interface. With our platform, customers can easily browse and explore products without unnecessary scrolling. Sellers no longer need to build separate websites, allowing them to focus on presenting their products effectively and connecting with their audience. We are committed to enhancing accessibility, efficiency, and user experience in the evolving landscape of digital commerce."
+
+const headingTwo = "Shops";
+const headingThree = "Trending Items"
+const headingFour = "Start Selling With Us!"
 
 export default function Test() {
     return (
-        <>
+        <div className="mx-4">
             <MainLayout></MainLayout>
             <MainImage>
-                <Serach></Serach>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex">
+                    <CategoryDropDown></CategoryDropDown>
+                    <div className="md:ml-8 flex">
+                        <Serach></Serach>
+                    </div>
+                </div>
             </MainImage>
-        </>
+            <Heading className="text-center p-2">{headingOne}</Heading>
+            <TextBox>{textOne}</TextBox>
+            <div className="flex justify-between">
+                <Heading className="p-2">{headingTwo}</Heading>
+                <SeeAll href="/login"></SeeAll>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-hidden">
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            </div>
+            <div className="flex justify-between">
+                <Heading className="p-2">{headingThree}</Heading>
+                <SeeAll href="/login"></SeeAll>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-hidden">
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            </div>
+            <Heading className="p-2">{headingFour}</Heading>
+            <TextBoxTwo></TextBoxTwo>
+            <Copyright></Copyright>
+        </div>
     )
 }
+

@@ -11,7 +11,7 @@ export default function MainLayout() {
     return (
         <AppProvider>
             <Head title="Home"></Head>
-            <div className="flex justify-between mx-4 items-center">
+            <div className="flex justify-between items-center">
                 <Logo></Logo>
                 <div className="gap-x-3 hidden md:flex">
                     <Button></Button>
@@ -21,11 +21,9 @@ export default function MainLayout() {
                     <Hamburger></Hamburger>
                 </div>
             </div>
-            <div className="mx-4">
                 <hr className="h-[2px] bg-black" />
                 <HamList></HamList>
                 <NavLink></NavLink>
-            </div>
         </AppProvider>
     )
 }
