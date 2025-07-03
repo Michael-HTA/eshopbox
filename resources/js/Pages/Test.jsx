@@ -8,6 +8,8 @@ import TextBox from "@/Components/TextBox";
 import SeeAll from "@/Components/SeeAll";
 import Card from "@/Components/Card";
 import TextBoxTwo from "@/Components/TextBoxTwo";
+import ShopList from "@/Components/ShopList";
+import ShopCarousel from "@/Components/ShopCarousel";
 
 const headingOne = "Buy & Sell With Us!";
 const textOne = "Our mission is to streamline the online shopping experience by bridging the gap between social media and modern e-commerce. We enable online shop owners to create storefronts that retain the familiar structure of social platforms, while offering the clarity and organization of a dedicated shopping interface. With our platform, customers can easily browse and explore products without unnecessary scrolling. Sellers no longer need to build separate websites, allowing them to focus on presenting their products effectively and connecting with their audience. We are committed to enhancing accessibility, efficiency, and user experience in the evolving landscape of digital commerce."
@@ -28,33 +30,30 @@ export default function Test() {
                     </div>
                 </div>
             </MainImage>
-            <Heading className="text-center p-2">{headingOne}</Heading>
+            <Heading className="text-center py-10">{headingOne}</Heading>
             <TextBox>{textOne}</TextBox>
             <div className="flex justify-between">
-                <Heading className="p-2">{headingTwo}</Heading>
+                <Heading className="py-10">{headingTwo}</Heading>
                 <SeeAll href="/login"></SeeAll>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-hidden">
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            </div>
+            <ShopCarousel></ShopCarousel>
             <div className="flex justify-between">
-                <Heading className="p-2">{headingThree}</Heading>
+                <Heading className="py-5">{headingThree}</Heading>
                 <SeeAll href="/login"></SeeAll>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-hidden">
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
+                <ShopList className=""></ShopList>
             </div>
-            <Heading className="p-2">{headingFour}</Heading>
+            <Heading className="py-10">{headingFour}</Heading>
             <TextBoxTwo></TextBoxTwo>
             <Copyright></Copyright>
         </div>
