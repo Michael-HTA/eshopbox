@@ -3,10 +3,10 @@ import { Link } from "@inertiajs/react";
 
 export default function ShopCard({className}) {
     return (
-        <Link href="/login" className={`rounded-2xl bg-white text-center md:text-sm flex-shrink-0 shadow ${className}`}>
-            <img src={SupermarketImage} alt="Supermarket" className="p-2 rounded-2xl mx-auto" />
-            <div className="text-blue-600 text-base font-semibold">Fresh Market</div>
-            <div className="text-xs pb-2">Grocery Store</div>
+        <Link href="/login" className={`rounded-md overflow-hidden bg-white text-center md:text-sm flex-shrink-0 shadow ${className}`}>
+            <img src={SupermarketImage} alt="Supermarket" className="mb-2" />
+            <div className="text-blue-600 text-sm md:text-base font-semibold">Fresh Market</div>
+            <div className="text-xs mb-2">Grocery Store</div>
         </Link>
     );
 }
