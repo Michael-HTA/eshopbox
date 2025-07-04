@@ -1,4 +1,3 @@
-import Serach from "@/Components/Buttons/Search";
 import CategoryDropDown from "@/Components/Buttons/CategoryDropDown";
 import MainImage from "@/Components/MainImage";
 import MainLayout from "@/Layouts/MainLayout";
@@ -23,11 +22,8 @@ function Home() {
         <>  
             <Head title="Home"></Head>
             <MainImage>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex">
+                <div className="absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-full flex justify-center">
                     <CategoryDropDown></CategoryDropDown>
-                    <div className="md:ml-8 flex">
-                        <Serach></Serach>
-                    </div>
                 </div>
             </MainImage>
             <Heading className="text-center py-5">{headingOne}</Heading>

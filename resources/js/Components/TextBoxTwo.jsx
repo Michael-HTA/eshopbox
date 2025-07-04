@@ -6,8 +6,8 @@ export default function TextBoxTwo({children}) {
             <p>
                 Join our growing community of shop owners who are making online selling easier and faster. No need to build a separate website just create your account and showcase your products in a clean, scroll-free interface that customers love.
             </p>
-            <Link href="/login" className="border-2 rounded-full border-black w-auto mx-auto p-2 mt-2 md:mt-0 bg-gradient-to-r from-[#a6a6a6] to-[#ffffff}">
-                Create Your Free Shop Now
+            <Link href="/login" className="border-2 rounded-full border-black w-auto mx-auto p-2 mt-2 md:mt-0 bg-gradient-to-r from-[#a6a6a6] to-[#ffffff]">
+                Create Your Shop Free Now
             </Link>
         </div>
     )

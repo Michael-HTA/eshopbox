@@ -12,7 +12,6 @@ export default function MainLayout({ children }) {
     return (
         <AppProvider>
             <div className="mx-4">
-                {/* <Head title="Home"></Head> */}
                 <div className="flex justify-between items-center">
                     <Logo></Logo>
                     <div className="gap-x-3 hidden md:flex">
