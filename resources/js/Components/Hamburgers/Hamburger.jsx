@@ -1,9 +1,9 @@
-import { useAppContext } from "./AppProvider";
+import { useNavContext } from "../Providers/NavProvider";
 
 export default function Hamburger() {
 
 
-    const { isOpen, setIsOpen } = useAppContext();
+    const { isOpen, setIsOpen } = useNavContext();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);

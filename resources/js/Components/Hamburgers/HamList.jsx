@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { useAppContext } from "./AppProvider";
+import { useNavContext } from "../Providers/NavProvider";
 import { Link } from "@inertiajs/react";
-import MenuLinkList from "./MenuLinkList";
+import MenuLinkList from "../MenuLinkList";
 
 export default function HamList() {
 
     // Getting shared data
-    const { isOpen, setIsOpen } = useAppContext();
+    const { isOpen, setIsOpen } = useNavContext();
 
     // Setting height of nav tag
     const [maxHeight, setMaxHeight] = useState('0px');

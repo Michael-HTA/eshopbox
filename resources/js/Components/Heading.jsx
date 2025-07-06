@@ -1,7 +1,7 @@
-export default function Heading({children, className = ""}){
+export default function Heading({children, className = "", ...props}){
     return(
         <>
-            <h1 className={`text-2xl font-semibold ${className}`}>{children}</h1>
+            <h1  {...props} className={`font-semibold ${className}`}>{children}</h1>
         </>
     )
 }

@@ -19,36 +19,39 @@ const headingFour = "Start Selling With Us!"
 
 function Home() {
     return (
-        <>  
+        <>
             <Head title="Home"></Head>
-            <MainImage>
-                <div className="absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-full flex justify-center">
-                    <CategoryDropDown></CategoryDropDown>
+            <MainLayout></MainLayout>
+            <div className="mx-4">
+                <MainImage>
+                    <div className="absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-full flex justify-center">
+                        <CategoryDropDown></CategoryDropDown>
+                    </div>
+                </MainImage>
+                <Heading className="text-center text-2xl py-5">{headingOne}</Heading>
+                <TextBox>{textOne}</TextBox>
+                <div className="flex justify-between">
+                    <Heading className="py-5 text-2xl">{headingTwo}</Heading>
+                    <SeeAll href="/login"></SeeAll>
                 </div>
-            </MainImage>
-            <Heading className="text-center py-5">{headingOne}</Heading>
-            <TextBox>{textOne}</TextBox>
-            <div className="flex justify-between">
-                <Heading className="py-5">{headingTwo}</Heading>
-                <SeeAll href="/login"></SeeAll>
+                <ShopCarousel></ShopCarousel>
+                <div className="flex justify-between">
+                    <Heading className="py-5 text-2xl">{headingThree}</Heading>
+                    <SeeAll href="/login"></SeeAll>
+                </div>
+                <div className="grid grid-cols-2  md:grid-cols-5 gap-3">
+                    {Array.from({ length: 10 }).map((_, index) => (
+                        <ItemCard className="transition-all ease-in-out duration-300 md:hover:scale-110" key={index} />
+                    ))}
+                </div>
+                <Heading className="py-5 text-2xl">{headingFour}</Heading>
+                <TextBoxTwo></TextBoxTwo>
+                <Copyright></Copyright>
             </div>
-            <ShopCarousel></ShopCarousel>
-            <div className="flex justify-between">
-                <Heading className="py-5">{headingThree}</Heading>
-                <SeeAll href="/login"></SeeAll>
-            </div>
-            <div className="grid grid-cols-2  md:grid-cols-5 gap-3">
-                {Array.from({ length: 10 }).map((_, index) => (
-                    <ItemCard className="transition-all ease-in-out duration-300 md:hover:scale-110" key={index} />
-                ))}
-            </div>
-            <Heading className="py-5">{headingFour}</Heading>
-            <TextBoxTwo></TextBoxTwo>
-            <Copyright></Copyright>
         </>
     )
 }
 
-Home.layout = page => <MainLayout>{page}</MainLayout>
+// Home.layout = page => <MainLayout>{page}</MainLayout>
 
 export default Home;

@@ -3,12 +3,12 @@ import MenuLinkList from './MenuLinkList';
 
 export default function NavLink(){
     return(
-        <div className='flex justify-around'>
+        <nav className='flex justify-around'>
            {
              MenuLinkList.map((link,key) => {
                 return(<Link href="/products" key={key} className='hover:text-blue-500 hidden md:block text-sm'>{link.name}</Link>)
             })
            }
-        </div>
+        </nav>
     )
 }
