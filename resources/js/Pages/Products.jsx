@@ -7,13 +7,13 @@ import MainLayout from "@/Layouts/MainLayout"
 import { Head } from "@inertiajs/react";
 
 
-function Products({ query, category }) {
+function Products({ auth, category }) {
     return (
         <>
             <Head title="Products"></Head>
             <div className="flex flex-col min-h-screen">
                 <div className="md:h-[5rem]">
-                    <MainLayout></MainLayout>
+                    <MainLayout auth={auth}></MainLayout>
                 </div>
                 <AppProvider>
                     <div className="grid grid-cols-12 mx-4 ">

@@ -16,12 +16,10 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get(
-    '/home',
-    function () {
-        return Inertia::render('Home');
-    }
-);
+Route::get('/home', function (Request $request) {
+    return Inertia::render('Home');
+});
+
 
 Route::get(
     '/search',
