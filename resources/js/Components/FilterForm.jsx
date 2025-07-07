@@ -17,7 +17,7 @@ const Select = ({ className = '', ...props }) => {
 const HeadAndInput = ({ label, options = [], selectedValue, onChange }) => {
     return (
         <>
-            <Heading className="text-xs">{label}</Heading>
+            <Heading className="text-xs py-1">{label}</Heading>
             <DropdownMenu>
                 <DropdownMenuTrigger className="text-center text-xs border border-black rounded relative h-6 flex items-center justify-between px-2 w-full">
                     <span>{selectedValue || "Select..."}</span>
@@ -35,10 +35,10 @@ const HeadAndInput = ({ label, options = [], selectedValue, onChange }) => {
     )
 }
 
-const HeadAndNumberInput = ({ label, value, onChange }) => {
+const HeadAndNumberInput = ({ label, onChange }) => {
     return (
         <>
-            <Heading className="text-xs">{label}</Heading>
+            <Heading className="text-xs py-1">{label}</Heading>
             <Input className=" border-black rounded h-6 px-2 w-full" onChange={onChange} placeholder="0"></Input>
         </>
     )
