@@ -58,10 +58,14 @@ export default function CategoryDropDown() {
 
     return (
         <div className="flex w-full justify-center" ref={dropdownRef}>
-            <div className='w-[65%] sm:w-96 relative'>
+            <div className='w-[60%] sm:w-96 relative'>
 
                 {/* Input bar */}
-                <input onChange={handleSearchOnChange} value={searchTerm} onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                <input 
+                    onChange={handleSearchOnChange} 
+                    value={searchTerm} 
+                    onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                    required
                     className="py-1 rounded-l-lg border-0 text-center focus:ring-0 focus:outline-none border-r-2 border-gray-500 focus:border-gray-500 w-full"
                     placeholder="Search"
                 />
@@ -74,12 +78,12 @@ export default function CategoryDropDown() {
                     />
                 )}
             </div>
-            <div className='md:flex flex-col w-36 relative hidden'>
+            <div className='flex flex-col w-32 relative'>
 
                 {/* Category button */}
                 <button className="bg-white rounded-r-lg py-1" type="button" onClick={handleCategoryClick}>
                     {categoryValue}
-                    <ChevronDownIcon className="h-5 w-5 absolute top-1/2 right-0 -translate-x-1/2 -translate-y-1/2"></ChevronDownIcon>
+                    <ChevronDownIcon className="h-5 w-5 absolute top-1/2 right-0 -translate-y-1/2"></ChevronDownIcon>
                 </button>
 
                 {/* Catergory list */}
@@ -100,7 +104,7 @@ export default function CategoryDropDown() {
             </div>
 
             {/* Search button */}
-            <button onClick={handleSearch} className="md:ml-3 rounded-r-lg md:rounded-full px-6 py-1 bg-white text-center" type='button'>Search</button>
+            <button onClick={handleSearch} className="hidden md:flex ml-3 rounded-full px-6 py-1 bg-white text-center" type='button'>Search</button>
 
         </div>
     );

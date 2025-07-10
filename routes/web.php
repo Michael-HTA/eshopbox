@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
@@ -8,17 +10,17 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    // return Inertia::render('Welcome', [
+    //     'canLogin' => Route::has('login'),
+    //     'canRegister' => Route::has('register'),
+    //     'laravelVersion' => Application::VERSION,
+    //     'phpVersion' => PHP_VERSION,
+    // ]);
+
+    return redirect('/home');
 });
 
-Route::get('/home', function (Request $request) {
-    return Inertia::render('Home');
-});
+Route::get('/home',HomeController::class)->name('home');
 
 
 Route::get(
@@ -31,12 +33,8 @@ Route::get(
     }
 );
 
-Route::get("/products", function (Request $request) {
-    return Inertia::render('Products', [
-        "category" => $request->input('category'),
-        "query" => $request->input('query')
-    ]);
-})->name('products');
+Route::get("/products",[ProductController::class,'index'])->middleware('auth')->name('products');
+Route::post("/products",[ProductController::class,'store'])->name('products-post');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

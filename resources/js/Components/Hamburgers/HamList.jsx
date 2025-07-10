@@ -31,6 +31,21 @@ export default function HamList() {
         return () => window.removeEventListener('resize', handleResize)
     }, []);
 
+    // Closing the hamburger menu list when user click outside the box
+    useEffect(() => {
+
+        const handleClickOutside = (e) => {
+            if (navRef.current && !navRef.current.contains(e.target)) {
+                setIsOpen(false);
+                // console.log('click')
+            }
+        }
+
+        window.addEventListener('mousedown', handleClickOutside);
+
+        return () => window.removeEventListener('mousedown', handleClickOutside)
+    }, []);
+
     // For nav list apperance
     useEffect(() => {
         if (isOpen && navRef.current) {
@@ -45,12 +60,23 @@ export default function HamList() {
         if (width >= 768 && isOpen) {
             setIsOpen(false); // Only if setIsOpen is available
         }
-    },[width]);
+    }, [width]);
 
     return (
         <>
-            <nav ref={navRef} className={`md:hidden text-center rounded-lg text-white mt-1 p-1  bg-slate-800 transition-[max-height,opacity] duration-500 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} flex flex-col`} style={{  maxHeight: isOpen ? '500px' : '0px' }}>
-                {MenuLinkList.map((list, id) => <Link href='#' key={id} className="py-1">{list.name}</Link>)}
+            <nav ref={navRef} className={`md:hidden text-center rounded-lg text-white mt-1 p-1  bg-slate-800 transition-[max-height,opacity] duration-500 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} flex flex-col`} style={{ maxHeight: isOpen ? '600px' : '0px' }}>
+                <ul className="flex flex-col space-y-3">
+                    {MenuLinkList.map((list, id) => {
+
+                        // const background = id % 2 === 0 ? "bg-red-500" : "bg-blue-200"
+                        return (
+                            <li key={id}>
+                                <Link href='#' >{list.name}</Link>
+                            </li>
+                        )
+                    }
+                    )}
+                </ul>
             </nav>
         </>
     )

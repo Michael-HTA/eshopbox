@@ -7,7 +7,7 @@ import MainLayout from "@/Layouts/MainLayout"
 import { Head } from "@inertiajs/react";
 
 
-function Products({ auth, category }) {
+function Products({ auth, category, query }) {
     return (
         <>
             <Head title="Products"></Head>

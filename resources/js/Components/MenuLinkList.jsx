@@ -1,6 +1,5 @@
 const MenuLinkList = [
     {name: "Home"},
-    {name: "Products"},
     {name: "Shops"},
     {name: "Electronics"},
     {name: "Foods"},
